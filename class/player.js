@@ -33,8 +33,15 @@ class Player {
 
     takeItem(itemName) {
 
-        // Fill this in
-
+        let roomItem = this.currentRoom.getItemByName(itemName);
+        this.items.push(roomItem);
+        
+        this.currentRoom.items.forEach((item, i) => {
+            if (item.name === itemName) {
+                this.currentRoom.items.splice(i, 1);
+                return;
+            }
+        });
     }
 
     dropItem(itemName) {
