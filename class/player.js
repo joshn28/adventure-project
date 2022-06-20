@@ -46,7 +46,12 @@ class Player {
 
     dropItem(itemName) {
 
-        // Fill this in
+        this.items.forEach((item, i) => {
+            if (item.name === itemName) {
+                this.currentRoom.items.push(item);
+                this.items.splice(i, 1);
+            }
+        });
     }
 
     eatItem(itemName) {
