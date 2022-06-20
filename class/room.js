@@ -45,7 +45,15 @@ class Room {
 
     getItemByName(name) {
 
-        // Fill this in
+       let roomItem;
+       
+       this.items.forEach(item => {
+        if (item.name === name) {
+            roomItem = item;
+        }
+       });
+
+       return roomItem;
     }
 
 }
