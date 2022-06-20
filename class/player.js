@@ -49,7 +49,15 @@ class Player {
 
     getItemByName(name) {
 
-        // Fill this in
+        let playerItem;
+        
+        this.items.forEach(item => {
+            if (item.name === name) {
+                playerItem = item;
+            }
+        });
+        
+        return playerItem;
     }
 }
 
